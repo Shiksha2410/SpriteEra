@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Resume Builder</title>
+</head>
+<body>
+
+    <header>
+        <h1>Resume Builder</h1>
+    </header>
+    <h2>Welcome to Resume Builder – <b>Your Gateway to Professional Success!</b></h2>
+
+    <p>Crafting the perfect resume is the first step toward securing your dream job, and <b>Resume Builder </b>is here to make that journey seamless and impactful. Our user-friendly resume builder is designed to empower you with the tools and resources you need to create a standout resume that showcases your skills, experiences, and unique strengths.</p>
+    <p>Our platform boasts an intuitive and user-friendly design, ensuring a smooth and enjoyable resume-building experience. No more navigating through complex interfaces – create your resume effortlessly.</p>
+    <p>Choose from a diverse range of professionally crafted templates, each designed to suit different industries and career levels. Whether you're in finance, technology, healthcare, or any other field, we have the perfect template for you.</p>
+    <main>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action="login.php" method="post" onsubmit="return validateForm()">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+        
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+        
+                <!-- Login button -->
+                <input type="submit" class="submit_color" value="Login">
+        
+            </form>
+            <p id="error-message" class="error-message"></p>
+        </div>
+    </main>
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var errorMessage = document.getElementById("error-message");
+    
+            if (username === "" || password === "") {
+                errorMessage.textContent = "Please fill out all fields.";
+                return false; // Prevent form submission
+            }
+    
+            // Additional validation logic can be added here
+    
+            // If all validations pass, redirect to another page
+            window.location.href = "index.html";
+            
+            // Prevent form submission (optional)
+            return false;
+        }
+    </script>
+
+    <footer>
+        <p class="fs-15">&copy;Copyright 2022. All Rights Reserved - <span>build.resume</span></p>
+    </footer>
+
+</body>
+</html>
